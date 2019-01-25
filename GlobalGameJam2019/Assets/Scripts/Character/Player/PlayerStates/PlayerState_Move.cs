@@ -23,14 +23,15 @@ public class PlayerState_Move : PlayerState
     public override bool UpdateState()
     {
         //Basic movemnt
-        Vector3 frameVelocity = m_rigidbody.velocity;
-
+        Vector3 frameVelocity = new Vector3();
         if (Input.GetAxisRaw("Horizontal") != 0.0f)
         {
-            if(m_parentPlayer.m_currentDrunkEffects.m_flipHorizontalInput)
-                frameVelocity.x -= Input.GetAxisRaw("Horizontal") * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
-            else
-                frameVelocity.x += Input.GetAxisRaw("Horizontal") * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
+            frameVelocity.x += Input.GetAxisRaw("Horizontal") * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
+            if (m_parentPlayer.m_currentDrunkEffects.m_flipHorizontalInput)
+                frameVelocity.x *= -1;
+
+            if (m_parentPlayer.m_currentDrunkEffects.m_additionalHorizontalInput)
+                frameVelocity.x *= m_parentPlayer.m_additionalInputMultiplier; 
         }
         else
         {
@@ -39,10 +40,12 @@ public class PlayerState_Move : PlayerState
 
         if (Input.GetAxisRaw("Vertical") != 0.0f)
         {
+            frameVelocity.z += Input.GetAxisRaw("Vertical") * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
             if (m_parentPlayer.m_currentDrunkEffects.m_flipVerticalInput)
-                frameVelocity.z -= Input.GetAxisRaw("Vertical") * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
-            else
-                frameVelocity.z += Input.GetAxisRaw("Vertical") * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
+                frameVelocity.z *= -1;
+
+            if (m_parentPlayer.m_currentDrunkEffects.m_additionalVerticalInput)
+                frameVelocity.x *= m_parentPlayer.m_additionalInputMultiplier;
         }
         else
         {
@@ -50,6 +53,8 @@ public class PlayerState_Move : PlayerState
         }
 
         //Cap to max speed
+        frameVelocity += m_rigidbody.velocity;
+
         if (frameVelocity.magnitude > m_parentPlayer.m_maxSpeed)
             frameVelocity = frameVelocity.normalized * m_parentPlayer.m_maxSpeed;
 

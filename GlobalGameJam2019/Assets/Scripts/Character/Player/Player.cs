@@ -19,9 +19,11 @@ public class Player : Character
         public bool m_flipHorizontalInput = false;
         public bool m_additionalVerticalInput = false;
         public bool m_additionalHorizontalInput = false;
+
+        public bool m_wavyShader = false;
     }
 
-    public DrunkEffects m_currentDrunkEffects;
+    public DrunkEffects m_currentDrunkEffects = null;
     public PlayerState m_currentState = null;
 
     private Camera m_mainCamera = null;
@@ -79,6 +81,15 @@ public class Player : Character
         //Stop for random amount of time
         yield return new WaitForSeconds(Random.Range(m_minDrunkEffectTimer, m_maxDrunkEffectTimer));
         m_currentDrunkEffects = m_gameManager.DetermineDrunkEffects(); // New effects!
+
+        if(m_currentDrunkEffects.m_wavyShader)
+        {
+
+        }
+        else
+        {
+
+        }
         StartCoroutine(GetRandomEffects());
     }
 
