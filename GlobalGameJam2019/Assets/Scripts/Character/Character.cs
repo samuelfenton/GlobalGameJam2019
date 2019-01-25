@@ -12,6 +12,8 @@ public class Character : MonoBehaviour
     [Header("Model")]
     public GameObject m_model = null;
 
+    protected LayerController m_layerController = null;
+        
     protected Rigidbody m_rigidbody = null;
     protected GameManager m_gameManager = null;
 
@@ -20,6 +22,8 @@ public class Character : MonoBehaviour
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        m_layerController = m_gameManager.GetComponent<LayerController>();
+
         m_animator = GetComponentInChildren<Animator>();
     }
 	

@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class ThrownBottle : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private LayerController m_layerController = null;
+    private void Start()
     {
-        if(collision.gameObject.layer == LayerController.m_enemyMask)
-        {
-            collision.gameObject.GetComponent<Enemy>().SoberDown();
-        }
+        m_layerController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LayerController>();
+    }
 
-        Destroy(gameObject);
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == m_layerController.m_enemyMask)
+        {
+            other.gameObject.GetComponent<Enemy>().SoberDown();
+            Destroy(gameObject);
+        }
+        if (other.gameObject.layer == m_layerController.m_enviromentMask)
+        {
+            Destroy(gameObject);
+        }
     }
 }

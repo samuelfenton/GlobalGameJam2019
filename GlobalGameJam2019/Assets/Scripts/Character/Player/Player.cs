@@ -64,7 +64,7 @@ public class Player : Character
         Ray ray = m_mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, LayerController.m_planeMask))
+        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, m_layerController.m_planeMask))
         {
             //one of coordiantes being always zero for aligned plane
             Vector3 mousePos = hit.point;//this is relative to 0,0,0
@@ -74,7 +74,7 @@ public class Player : Character
 
             //Face only when greater than a very smaller number
             if(mouseToPlayer.magnitude > float.Epsilon)
-                m_model.transform.LookAt(transform.position + mouseToPlayer, Vector3.up);
+                m_model.transform.LookAt(m_model.transform.position + mouseToPlayer, Vector3.up);
         }
 
         //Post effects
