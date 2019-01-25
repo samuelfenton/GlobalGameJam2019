@@ -11,18 +11,12 @@ public class Player : Character
     [Tooltip("Maximum time between change in drunk effects")]
     public float m_maxDrunkEffectTimer = 10.0f;
 
-    public struct DrunkEffects
+    public class DrunkEffects
     {
         public enum ON_OFF {ON = -1, OFF = 1}
 
-        public ON_OFF m_flipVerticalInput;
-        public ON_OFF m_flipHorizontalInput;
-
-        public DrunkEffects (ON_OFF p_flipVerticalInput = ON_OFF.OFF, ON_OFF p_flipHorizontalInput = ON_OFF.OFF)
-        {
-            m_flipVerticalInput = p_flipVerticalInput;
-            m_flipHorizontalInput = p_flipHorizontalInput;
-        }
+        public ON_OFF m_flipVerticalInput = ON_OFF.OFF;
+        public ON_OFF m_flipHorizontalInput = ON_OFF.OFF;
     }
 
     private DrunkEffects m_currentDrunkEffects;
@@ -30,8 +24,12 @@ public class Player : Character
     // Use this for initialization
     protected override void Start()
     {
+        DontDestroyOnLoad(this);
+
         base.Start();
         m_rigidbody = GetComponent<Rigidbody>();
+
+        m_currentDrunkEffects = new DrunkEffects();
 
         StartCoroutine(GetRandomEffects());
     }
@@ -39,7 +37,6 @@ public class Player : Character
     // Update is called once per frame
     private void Update ()
     {
-        Debug.Log((int)m_currentDrunkEffects.m_flipHorizontalInput);
         //Basic movemnt
         Vector3 frameVelocity = m_rigidbody.velocity;
 
