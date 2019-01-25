@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DrunkCompanion))]
 public class Player : Character
 {
 
@@ -13,6 +14,7 @@ public class Player : Character
     [Tooltip("Changes how much we force player movement, e.g. 2, player speed is now 2 in vertical/horiztonal at all times ")]
     public float m_additionalInputMultiplier = 1.0f;
 
+    [System.Serializable]
     public class DrunkEffects
     {
         public bool m_flipVerticalInput = false;
@@ -21,11 +23,15 @@ public class Player : Character
         public bool m_additionalHorizontalInput = false;
 
         public bool m_wavyShader = false;
+        public bool m_vignette = false;
+        public bool m_DOF = false;
     }
+
 
     public DrunkEffects m_currentDrunkEffects = null;
     public PlayerState m_currentState = null;
 
+    private DrunkCompanion m_drunkCompanion = null;
     private Camera m_mainCamera = null;
     int m_planeMask = 0;
 
@@ -33,7 +39,7 @@ public class Player : Character
     {
         base.Start();
 
-        m_rigidbody = GetComponent<Rigidbody>();
+        m_drunkCompanion = GetComponent<DrunkCompanion>();
 
         m_currentDrunkEffects = new DrunkEffects();
         m_mainCamera = Camera.main;
@@ -58,7 +64,6 @@ public class Player : Character
         }
 
         //Apply model rotation, mouse dir 
-        //TODO, doesnt work
         Ray ray = m_mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -74,6 +79,9 @@ public class Player : Character
             if(mouseToPlayer.magnitude > float.Epsilon)
                 m_model.transform.LookAt(transform.position + mouseToPlayer, Vector3.up);
         }
+
+        //Post effects
+        m_drunkCompanion.UpdatePostProcesing(m_currentDrunkEffects);
     }
 
     private IEnumerator GetRandomEffects()
@@ -82,14 +90,6 @@ public class Player : Character
         yield return new WaitForSeconds(Random.Range(m_minDrunkEffectTimer, m_maxDrunkEffectTimer));
         m_currentDrunkEffects = m_gameManager.DetermineDrunkEffects(); // New effects!
 
-        if(m_currentDrunkEffects.m_wavyShader)
-        {
-
-        }
-        else
-        {
-
-        }
         StartCoroutine(GetRandomEffects());
     }
 
