@@ -55,13 +55,4 @@ public class Player : Character
         //Apply velocity
         m_rigidbody.velocity = frameVelocity;
     }
-
-    private DrunkEffects DetermineDrunkEffects()
-    {
-        DrunkEffects currentDrunkenness = new DrunkEffects();
-        //Do magic here
-
-
-        return currentDrunkenness;
-    }
 }

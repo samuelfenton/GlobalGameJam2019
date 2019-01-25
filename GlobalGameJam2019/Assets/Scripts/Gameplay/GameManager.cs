@@ -22,4 +22,13 @@ public class GameManager : MonoBehaviour {
     {
         nAlcoholBottles++;
     }
+
+    public Player.DrunkEffects DetermineDrunkEffects()
+    {
+        Player.DrunkEffects currentDrunkenness = new Player.DrunkEffects();
+        //Do magic here
+
+
+        return currentDrunkenness;
+    }
 }
