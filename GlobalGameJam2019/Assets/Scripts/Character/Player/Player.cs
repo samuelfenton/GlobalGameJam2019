@@ -46,7 +46,7 @@ public class Player : Character
 
         if(Input.GetAxisRaw("Horizontal") != 0.0f)
         {
-            frameVelocity.x += Input.GetAxisRaw("Horizontal") * m_movementAcceleration * Time.deltaTime; //speed up
+            frameVelocity.x += Input.GetAxisRaw("Horizontal") * (int)m_currentDrunkEffects.m_flipHorizontalInput * m_movementAcceleration * Time.deltaTime; //speed up
         }
         else
         {
@@ -55,7 +55,7 @@ public class Player : Character
 
         if (Input.GetAxisRaw("Vertical") != 0.0f)
         {
-            frameVelocity.z += Input.GetAxisRaw("Vertical") * m_movementAcceleration * Time.deltaTime;//speed up
+            frameVelocity.z += Input.GetAxisRaw("Vertical") * (int)m_currentDrunkEffects.m_flipVerticalInput * m_movementAcceleration * Time.deltaTime;//speed up
         }
         else
         {
