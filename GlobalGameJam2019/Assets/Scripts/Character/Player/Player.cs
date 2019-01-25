@@ -6,10 +6,11 @@ public class Player : Character
 {
     public struct DrunkEffects
     {
-        public int m_flipVerticalInput;
-        public int m_flipHorizontalInput;
+        public enum ON_OFF {ON = -1, OFF = 1}
+        public ON_OFF m_flipVerticalInput;
+        public ON_OFF m_flipHorizontalInput;
 
-        public DrunkEffects (int p_flipVerticalInput, int p_flipHorizontalInput)
+        public DrunkEffects (ON_OFF p_flipVerticalInput = ON_OFF.OFF, ON_OFF p_flipHorizontalInput = ON_OFF.OFF)
         {
             m_flipVerticalInput = p_flipVerticalInput;
             m_flipHorizontalInput = p_flipHorizontalInput;
