@@ -10,9 +10,11 @@ public class Character : MonoBehaviour
     public float m_maxSpeed = 1.0f;
 
     protected Rigidbody m_rigidbody = null;
+    protected GameManager m_gameManager = null;
     protected virtual void Start ()
     {
         m_rigidbody = GetComponent<Rigidbody>();
+        m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
     }
 	

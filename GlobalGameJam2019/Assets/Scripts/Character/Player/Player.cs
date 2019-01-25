@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class Player : Character
 {
+
+    [Header("Drunk stuff")]
+    [Tooltip("Minimum time between change in drunk effects")]
+    public float m_minDrunkEffectTimer = 5.0f;
+    [Tooltip("Maximum time between change in drunk effects")]
+    public float m_maxDrunkEffectTimer = 10.0f;
+
     public struct DrunkEffects
     {
         public enum ON_OFF {ON = -1, OFF = 1}
+
+
         public ON_OFF m_flipVerticalInput;
         public ON_OFF m_flipHorizontalInput;
 
@@ -17,12 +26,16 @@ public class Player : Character
         }
     }
 
+    private DrunkEffects m_currentDrunkEffects;
+
     // Use this for initialization
     protected override void Start()
     {
         base.Start();
         m_rigidbody = GetComponent<Rigidbody>();
 
+
+        StartCoroutine(GetRandomEffects());
     }
 
     // Update is called once per frame
@@ -55,5 +68,13 @@ public class Player : Character
 
         //Apply velocity
         m_rigidbody.velocity = frameVelocity;
+    }
+
+    private IEnumerator GetRandomEffects()
+    {
+        //Stop for random amount of time
+        yield return new WaitForSeconds(Random.Range(m_minDrunkEffectTimer, m_maxDrunkEffectTimer));
+        m_currentDrunkEffects = m_gameManager.DetermineDrunkEffects(); // New effects!
+        StartCoroutine(GetRandomEffects());
     }
 }
