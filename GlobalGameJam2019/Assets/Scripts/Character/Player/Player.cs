@@ -27,13 +27,11 @@ public class Player : Character
         public bool m_DOF = false;
     }
 
-
     public DrunkEffects m_currentDrunkEffects = null;
     public PlayerState m_currentState = null;
 
     private DrunkCompanion m_drunkCompanion = null;
     private Camera m_mainCamera = null;
-    int m_planeMask = 0;
 
     protected override void Start()
     {
@@ -43,7 +41,6 @@ public class Player : Character
 
         m_currentDrunkEffects = new DrunkEffects();
         m_mainCamera = Camera.main;
-        m_planeMask = LayerMask.NameToLayer("MousePlane");
 
         StartCoroutine(GetRandomEffects());
     }
@@ -67,7 +64,7 @@ public class Player : Character
         Ray ray = m_mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, m_planeMask))
+        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, LayerController.m_planeMask))
         {
             //one of coordiantes being always zero for aligned plane
             Vector3 mousePos = hit.point;//this is relative to 0,0,0

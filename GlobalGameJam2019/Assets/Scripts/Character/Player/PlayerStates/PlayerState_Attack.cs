@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class PlayerState_Attack : PlayerState
 {
+    private GameManager m_gameManager = null;
+
     public float m_attackTime = 1.0f;
 
     private bool m_attacking = false;
+
+    protected override void Start()
+    {
+        base.Start();
+        m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
     //run at swap to this state
     public override void StartState()
     {
@@ -31,7 +39,7 @@ public class PlayerState_Attack : PlayerState
     //Return true when valid
     public override bool IsValid()
     {
-        return Input.GetMouseButtonDown(0);
+        return Input.GetMouseButtonDown(0) && m_gameManager;
     }
 
     private IEnumerator AnimationEnded()
