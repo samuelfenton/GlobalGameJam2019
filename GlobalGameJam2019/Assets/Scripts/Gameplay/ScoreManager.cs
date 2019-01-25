@@ -6,7 +6,7 @@ using System.IO;
 public class ScoreManager : MonoBehaviour {
 
     //current highscore
-    float fCurrentScore = 0.0f;
+    public float fCurrentScore = 0.0f;
     //current name of player
     string szPlayerName = "tst";
 
@@ -23,7 +23,6 @@ public class ScoreManager : MonoBehaviour {
 
     void Update ()
     {
-        fCurrentScore = g.nAlcoholBottles;
 	}
 
     //saves the score into a notepad fle
