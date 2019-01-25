@@ -23,7 +23,7 @@ public class Player : Character
     public PlayerState m_currentState = null;
 
     private Camera m_mainCamera = null;
-    int m_planeMask = LayerMask.NameToLayer("MousePlane");
+    int m_planeMask = 0;
 
     protected override void Start()
     {
@@ -33,6 +33,8 @@ public class Player : Character
 
         m_currentDrunkEffects = new DrunkEffects();
         m_mainCamera = Camera.main;
+        m_planeMask = LayerMask.NameToLayer("MousePlane");
+
         StartCoroutine(GetRandomEffects());
     }
 
