@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 {
     [Header("Movement")]
     public float m_movementAcceleration = 1.0f;
+    public float m_movementDecelerationPercent = 0.2f;
     public float m_maxSpeed = 1.0f;
 
     protected Rigidbody m_rigidbody = null;
