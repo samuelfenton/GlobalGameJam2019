@@ -39,7 +39,7 @@ public class PlayerState_Attack : PlayerState
     //Return true when valid
     public override bool IsValid()
     {
-        return Input.GetMouseButtonDown(0) && m_gameManager;
+        return Input.GetMouseButtonDown(0) && m_gameManager.nAlcoholBottles > 0;
     }
 
     private IEnumerator AnimationEnded()
