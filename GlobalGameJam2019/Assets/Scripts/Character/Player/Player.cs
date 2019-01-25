@@ -23,6 +23,7 @@ public class Player : Character
     public PlayerState m_currentState = null;
 
     private Camera m_mainCamera = null;
+    int m_planeMask = LayerMask.NameToLayer("MousePlane");
 
     protected override void Start()
     {
@@ -52,17 +53,20 @@ public class Player : Character
 
         //Apply model rotation, mouse dir 
         //TODO, doesnt work
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = m_mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        int maskOfPlane = 1 << LayerMask.NameToLayer("MousePlane");
-        if (Physics.Raycast(ray, out hit, maskOfPlane))
+
+        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, m_planeMask))
         {
             //one of coordiantes being always zero for aligned plane
-            Vector3 mousePos = hit.transform.position;//this is relative to 0,0,0
-            Vector3 mouseToPlayer = transform.position - mousePos;
+            Vector3 mousePos = hit.point;//this is relative to 0,0,0
+
+            Vector3 mouseToPlayer =  mousePos - transform.position;
             mouseToPlayer.y = 0;
-            //relative to a gameObject other
-            m_model.transform.LookAt(transform.position + mouseToPlayer, Vector3.up);
+
+            //Face only when greater than a very smaller number
+            if(mouseToPlayer.magnitude > float.Epsilon)
+                m_model.transform.LookAt(transform.position + mouseToPlayer, Vector3.up);
         }
     }
 
