@@ -7,6 +7,9 @@ public class BottleScript : MonoBehaviour {
     //reference to self gameobject
     private GameObject bottle;
 
+    //score Manager
+    public ScoreManager sManager;
+
     //collected or not
     public bool bCollected = false;
 
@@ -21,6 +24,7 @@ public class BottleScript : MonoBehaviour {
     {
 	    if(bCollected == true)
         {
+            sManager.fCurrentScore++;
             bottle.SetActive(false);
         }	
 	}
