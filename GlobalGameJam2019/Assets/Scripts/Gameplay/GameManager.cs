@@ -96,11 +96,11 @@ public class GameManager : MonoBehaviour {
             int randNum = Random.Range(0, 100);
             if (randNum <= effectPercentages[0])
             {
-                currentEffect.m_flipHorizontalInput = Player.DrunkEffects.ON_OFF.ON;
+                currentEffect.m_flipHorizontalInput = true;
             }
             else if(randNum <= effectPercentages[1] && randNum > effectPercentages[0])
             {
-                currentEffect.m_flipVerticalInput = Player.DrunkEffects.ON_OFF.ON;
+                currentEffect.m_flipVerticalInput = true;
             }
         }
 

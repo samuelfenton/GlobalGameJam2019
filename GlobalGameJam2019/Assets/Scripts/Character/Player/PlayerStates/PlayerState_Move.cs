@@ -27,7 +27,10 @@ public class PlayerState_Move : PlayerState
 
         if (Input.GetAxisRaw("Horizontal") != 0.0f)
         {
-            frameVelocity.x += Input.GetAxisRaw("Horizontal") * (int)m_parentPlayer.m_currentDrunkEffects.m_flipHorizontalInput * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
+            if(m_parentPlayer.m_currentDrunkEffects.m_flipHorizontalInput)
+                frameVelocity.x -= Input.GetAxisRaw("Horizontal") * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
+            else
+                frameVelocity.x += Input.GetAxisRaw("Horizontal") * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
         }
         else
         {
@@ -36,7 +39,10 @@ public class PlayerState_Move : PlayerState
 
         if (Input.GetAxisRaw("Vertical") != 0.0f)
         {
-            frameVelocity.z += Input.GetAxisRaw("Vertical") * (int)m_parentPlayer.m_currentDrunkEffects.m_flipVerticalInput * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
+            if (m_parentPlayer.m_currentDrunkEffects.m_flipVerticalInput)
+                frameVelocity.z -= Input.GetAxisRaw("Vertical") * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
+            else
+                frameVelocity.z += Input.GetAxisRaw("Vertical") * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
         }
         else
         {

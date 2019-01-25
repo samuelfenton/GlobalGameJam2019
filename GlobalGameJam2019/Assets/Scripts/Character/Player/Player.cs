@@ -9,14 +9,16 @@ public class Player : Character
     [Tooltip("Minimum time between change in drunk effects")]
     public float m_minDrunkEffectTimer = 5.0f;
     [Tooltip("Maximum time between change in drunk effects")]
-    public float m_maxDrunkEffectTimer = 10.0f; 
+    public float m_maxDrunkEffectTimer = 10.0f;
+    [Tooltip("Changes how much we force player movement, e.g. 2, player speed is now 2 in vertical/horiztonal at all times ")]
+    public float m_additionalInputMultiplier = 1.0f;
 
     public class DrunkEffects
     {
-        public enum ON_OFF {ON = -1, OFF = 1}
-
-        public ON_OFF m_flipVerticalInput = ON_OFF.OFF;
-        public ON_OFF m_flipHorizontalInput = ON_OFF.OFF;
+        public bool m_flipVerticalInput = false;
+        public bool m_flipHorizontalInput = false;
+        public bool m_additionalVerticalInput = false;
+        public bool m_additionalHorizontalInput = false;
     }
 
     public DrunkEffects m_currentDrunkEffects;
