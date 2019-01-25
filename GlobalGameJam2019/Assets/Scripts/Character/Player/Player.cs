@@ -9,7 +9,7 @@ public class Player : Character
     [Tooltip("Minimum time between change in drunk effects")]
     public float m_minDrunkEffectTimer = 5.0f;
     [Tooltip("Maximum time between change in drunk effects")]
-    public float m_maxDrunkEffectTimer = 10.0f;
+    public float m_maxDrunkEffectTimer = 10.0f; 
 
     public class DrunkEffects
     {
@@ -19,51 +19,51 @@ public class Player : Character
         public ON_OFF m_flipHorizontalInput = ON_OFF.OFF;
     }
 
-    private DrunkEffects m_currentDrunkEffects;
+    public DrunkEffects m_currentDrunkEffects;
+    public PlayerState m_currentState = null;
 
-    // Use this for initialization
+    private Camera m_mainCamera = null;
+
     protected override void Start()
     {
-        DontDestroyOnLoad(this);
-
         base.Start();
+
         m_rigidbody = GetComponent<Rigidbody>();
 
         m_currentDrunkEffects = new DrunkEffects();
-
+        m_mainCamera = Camera.main;
         StartCoroutine(GetRandomEffects());
     }
 
-    // Update is called once per frame
     private void Update ()
     {
-        //Basic movemnt
-        Vector3 frameVelocity = m_rigidbody.velocity;
-
-        if(Input.GetAxisRaw("Horizontal") != 0.0f)
+        //State Machine!
+        if(m_currentState.UpdateState())//State done
         {
-            frameVelocity.x += Input.GetAxisRaw("Horizontal") * (int)m_currentDrunkEffects.m_flipHorizontalInput * m_movementAcceleration * Time.deltaTime; //speed up
-        }
-        else
-        {
-            frameVelocity.x *= m_movementDecelerationPercent; //slow down
-        }
-
-        if (Input.GetAxisRaw("Vertical") != 0.0f)
-        {
-            frameVelocity.z += Input.GetAxisRaw("Vertical") * (int)m_currentDrunkEffects.m_flipVerticalInput * m_movementAcceleration * Time.deltaTime;//speed up
-        }
-        else
-        {
-            frameVelocity.z *= m_movementDecelerationPercent;//slow down
+            foreach (PlayerState playerState in m_currentState.m_nextStates)
+            {
+                if(playerState.IsValid())
+                {
+                    SwapStates(playerState);
+                    break;
+                }
+            }
         }
 
-        //Cap to max speed
-        if(frameVelocity.magnitude > m_maxSpeed)
-            frameVelocity = frameVelocity.normalized * m_maxSpeed;
-
-        //Apply velocity
-        m_rigidbody.velocity = frameVelocity;
+        //Apply model rotation, mouse dir 
+        //TODO, doesnt work
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        int maskOfPlane = 1 << LayerMask.NameToLayer("MousePlane");
+        if (Physics.Raycast(ray, out hit, maskOfPlane))
+        {
+            //one of coordiantes being always zero for aligned plane
+            Vector3 mousePos = hit.transform.position;//this is relative to 0,0,0
+            Vector3 mouseToPlayer = transform.position - mousePos;
+            mouseToPlayer.y = 0;
+            //relative to a gameObject other
+            m_model.transform.LookAt(transform.position + mouseToPlayer, Vector3.up);
+        }
     }
 
     private IEnumerator GetRandomEffects()
@@ -72,5 +72,12 @@ public class Player : Character
         yield return new WaitForSeconds(Random.Range(m_minDrunkEffectTimer, m_maxDrunkEffectTimer));
         m_currentDrunkEffects = m_gameManager.DetermineDrunkEffects(); // New effects!
         StartCoroutine(GetRandomEffects());
+    }
+
+    private void SwapStates(PlayerState p_nextState)
+    {
+        m_currentState.EndState();
+        m_currentState = p_nextState;
+        m_currentState.StartState();
     }
 }

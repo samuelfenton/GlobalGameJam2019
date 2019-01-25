@@ -9,12 +9,18 @@ public class Character : MonoBehaviour
     public float m_movementDecelerationPercent = 0.2f;
     public float m_maxSpeed = 1.0f;
 
+    [Header("Model")]
+    public GameObject m_model = null;
+
     protected Rigidbody m_rigidbody = null;
     protected GameManager m_gameManager = null;
+
+    protected Animator m_animator = null;
     protected virtual void Start ()
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        m_animator = GetComponentInChildren<Animator>();
     }
 	
 	// Update is called once per frame
