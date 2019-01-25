@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ThrownBottle : MonoBehaviour
 {
+    private float m_rotationSpeed = 360.0f;
     private LayerController m_layerController = null;
     private void Start()
     {
         m_layerController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LayerController>();
+    }
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.right, m_rotationSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
