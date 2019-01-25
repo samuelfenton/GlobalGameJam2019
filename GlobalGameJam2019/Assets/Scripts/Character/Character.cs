@@ -15,7 +15,6 @@ public class Character : MonoBehaviour
     {
         m_rigidbody = GetComponent<Rigidbody>();
         m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-
     }
 	
 	// Update is called once per frame

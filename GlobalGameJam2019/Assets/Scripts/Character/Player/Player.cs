@@ -15,7 +15,6 @@ public class Player : Character
     {
         public enum ON_OFF {ON = -1, OFF = 1}
 
-
         public ON_OFF m_flipVerticalInput;
         public ON_OFF m_flipHorizontalInput;
 
@@ -34,13 +33,13 @@ public class Player : Character
         base.Start();
         m_rigidbody = GetComponent<Rigidbody>();
 
-
         StartCoroutine(GetRandomEffects());
     }
 
     // Update is called once per frame
     private void Update ()
     {
+        Debug.Log((int)m_currentDrunkEffects.m_flipHorizontalInput);
         //Basic movemnt
         Vector3 frameVelocity = m_rigidbody.velocity;
 
