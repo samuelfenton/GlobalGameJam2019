@@ -66,6 +66,8 @@ public class PlayerState_Attack : PlayerState
         thrownBottle.transform.position = m_parentPlayer.m_model.transform.localToWorldMatrix * m_thrownOffset;//Add offset
         thrownBottle.transform.position += transform.position; //add parent position
 
+        thrownBottle.transform.LookAt(thrownBottle.transform.position + m_parentPlayer.m_model.transform.forward, Vector3.up);
+
         thrownBottle.GetComponent<Rigidbody>().velocity = m_parentPlayer.m_model.transform.forward * m_throwSpeed; //THROW!
     }
 
