@@ -83,7 +83,7 @@ public class PlayerState_Attack : PlayerState
 
             thrownBottle.transform.LookAt(thrownBottle.transform.position + mouseToPlayer, Vector3.up);
 
-            thrownBottle.GetComponent<Rigidbody>().velocity = mouseToPlayer * m_throwSpeed; //THROW!
+            thrownBottle.GetComponent<Rigidbody>().velocity = mouseToPlayer.normalized * m_throwSpeed; //THROW!
         }
     }
 
