@@ -548,7 +548,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224913286654672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: -19}
+  m_LocalPosition: {x: 49.234295, y: 3.14, z: 30.950104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4125146463656860}
@@ -948,15 +948,12 @@ MonoBehaviour:
   m_maxSpeed: 12
   m_model: {fileID: 0}
   m_animator: {fileID: 0}
+  m_atackPlayerDistance: 3
   m_Player: {fileID: 0}
   Agent: {fileID: 195850077975498526}
   m_SightLength: 10
   Rotspeed: 10000
-  m_Control:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_Control: []
 --- !u!136 &136318785676582656
 CapsuleCollider:
   m_ObjectHideFlags: 1
