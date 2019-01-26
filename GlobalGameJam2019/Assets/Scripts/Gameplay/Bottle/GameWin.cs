@@ -15,12 +15,16 @@ public class GameWin : MonoBehaviour
 
     public void Start()
     {
-        gWinScreenObject.SetActive(true);
         if(lastLevel == true)
         {
             //hide button
             bButton.interactable = false;
         }
+    }
+
+    public void ShowWinScreen()
+    {
+        gWinScreenObject.SetActive(gWinScreenObject);
     }
 
     public void quit()

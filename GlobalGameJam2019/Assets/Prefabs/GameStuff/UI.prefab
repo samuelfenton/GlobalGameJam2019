@@ -249,14 +249,13 @@ GameObject:
   - component: {fileID: 223797634526627770}
   - component: {fileID: 114943111297851496}
   - component: {fileID: 114033457796092368}
-  - component: {fileID: 114201453501855428}
   m_Layer: 5
   m_Name: Win Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1809499161532450
 GameObject:
   m_ObjectHideFlags: 1
@@ -284,6 +283,7 @@ GameObject:
   - component: {fileID: 4550843094289038}
   - component: {fileID: 114300053993938704}
   - component: {fileID: 114741740049013888}
+  - component: {fileID: 114465392135394656}
   m_Layer: 0
   m_Name: UI
   m_TagString: UI
@@ -381,7 +381,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817432466767634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.368756, y: -7.4069223, z: -0.5710926}
+  m_LocalPosition: {x: 24.112782, y: 10.191119, z: -31.70191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4048525942326886}
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114201453501855428}
+      - m_Target: {fileID: 0}
         m_MethodName: restart
         m_Mode: 1
         m_Arguments:
@@ -620,22 +620,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114201453501855428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1786070430838262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3812476b3e4af254484547d9fd0687d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gWinScreenObject: {fileID: 1786070430838262}
-  bButton: {fileID: 1836257618552562}
-  sMan: {fileID: 114741740049013888}
-  bSubmitDisable: {fileID: 114978378918159846}
-  lastLevel: 0
 --- !u!114 &114270770000486698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -861,7 +845,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114201453501855428}
+      - m_Target: {fileID: 0}
         m_MethodName: nextLevel
         m_Mode: 1
         m_Arguments:
@@ -874,6 +858,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114465392135394656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817432466767634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3812476b3e4af254484547d9fd0687d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gWinScreenObject: {fileID: 1786070430838262}
+  bButton: {fileID: 0}
+  sMan: {fileID: 114741740049013888}
+  bSubmitDisable: {fileID: 114978378918159846}
+  lastLevel: 0
 --- !u!114 &114491051729757052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114201453501855428}
+      - m_Target: {fileID: 0}
         m_MethodName: setPlayerName
         m_Mode: 1
         m_Arguments:
@@ -1398,7 +1398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114201453501855428}
+      - m_Target: {fileID: 0}
         m_MethodName: quit
         m_Mode: 1
         m_Arguments:
