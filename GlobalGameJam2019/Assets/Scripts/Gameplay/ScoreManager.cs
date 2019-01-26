@@ -2,28 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
     //current highscore
     public float fCurrentScore = 0.0f;
     //current name of player
-    string szPlayerName = "tst";
+    public string szPlayerName = "tst";
 
     //file location
-    string szScoreTextFile = "Assets/Scripts/Gameplay/scores.txt";
+    [Tooltip("This is the string file location for the .txt file that is being written into.")]
+    public string szScoreTextFile = "Assets/Scripts/Gameplay/scores.txt";
+
+    //temp string
+    private string szTemp;
+
+    //event listener
+    public InputField input;
 
     //Game Manager reference
     public GameManager g;
 
     void Awake()
     {
-        saveScore();
+        //saveScore();
+        //add listener
+        var subEvent = new InputField.SubmitEvent();
+        subEvent.AddListener(storeName);
+        input.onEndEdit = subEvent;
     }
 
     void Update ()
     {
-	}
+
+    }
 
     //saves the score into a notepad fle
     void saveScore()
@@ -31,5 +44,16 @@ public class ScoreManager : MonoBehaviour {
         StreamWriter write = new StreamWriter(szScoreTextFile, true);
         write.WriteLine(szPlayerName + ": " + fCurrentScore.ToString());
         write.Close();
+    }
+
+    public void storeName(string nm)
+    {
+        szTemp = nm;
+    }
+
+    public void setName()
+    {
+        szPlayerName = szTemp;
+        saveScore();
     }
 }
