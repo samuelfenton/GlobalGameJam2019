@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
+
     //alcohol bottle counter
     public int nAlcoholBottles = 0;
+
+    public float AlcoholStrength = 0;
 
     public float[] effectPercentages = new float[(int)Player.DRUNK_EFFECTS.EFFECT_COUNT];
 
@@ -40,7 +42,10 @@ public class GameManager : MonoBehaviour
         {
             currentDrunkenness[i] = false;
         }
-        int percentage = 10 * nAlcoholBottles;
+
+        AlcoholStrength = (Mathf.Pow((nAlcoholBottles - 1), 2)) - 5;
+
+        float percentage = AlcoholStrength;
         if (percentage > 100)
             percentage = 100;
 
