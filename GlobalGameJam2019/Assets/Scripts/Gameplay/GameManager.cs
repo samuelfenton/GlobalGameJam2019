@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 
     public float[] effectPercentages = new float[(int)Player.DRUNK_EFFECTS.EFFECT_COUNT];
 
+    public int AmountOFEffects = 3;
+
     //player reference
     public Transform tPlayerPosition;
 
@@ -113,29 +115,40 @@ public class GameManager : MonoBehaviour {
 
     public bool[] temp(bool[] p_currentDrunkenness, float num)
     {
-        if (Random.Range(0, 100) <= num)
+        //randomly geenrates 3 numebers
+        int[] nRandGenNumber = new int[AmountOFEffects];
+        for(int j = 0; j < AmountOFEffects; j++)
         {
-            int randNum = Random.Range(0, 100);
-            for(int i = 0; i < (int)Player.DRUNK_EFFECTS.EFFECT_COUNT; i++)
-            {
-                if (i != (int)Player.DRUNK_EFFECTS.FLIP_VERT_INPUT)
-                {
-                    if(effectPercentages[(int)(i)] <= randNum && randNum > effectPercentages[(int)(i - 1)])
-                    {
-                        p_currentDrunkenness[i] = true;
-                    }
-                }
-                else
-                {
-                    if (effectPercentages[(int)(i)] < randNum)
-                    {
-                        p_currentDrunkenness[i] = true;
-                    }
-                }
-            }
-
+            nRandGenNumber[j] = Random.Range(0, 100);
         }
 
+        for (int j = 0; j < AmountOFEffects; j++)
+        {
+            if (nRandGenNumber[j] <= num)
+            {
+                int randNum = Random.Range(0, 100);
+                for (int i = 0; i < (int)Player.DRUNK_EFFECTS.EFFECT_COUNT; i++)
+                {
+                    if (i != (int)Player.DRUNK_EFFECTS.FLIP_VERT_INPUT)
+                    {
+                        if (effectPercentages[(int)(i)] <= randNum && randNum > effectPercentages[(int)(i - 1)])
+                        {
+                            p_currentDrunkenness[i] = true;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if (effectPercentages[(int)(i)] < randNum)
+                        {
+                            p_currentDrunkenness[i] = true;
+                            break;
+                        }
+                    }
+                }
+
+            }
+        }
         return p_currentDrunkenness;
     }
 }
