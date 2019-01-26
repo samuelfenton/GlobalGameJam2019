@@ -1209,13 +1209,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902067765113024}
-  m_LocalRotation: {x: 0.3473448, y: 0, z: 0, w: 0.9377375}
-  m_LocalPosition: {x: 0, y: 5, z: -4.31}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 11, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4950581472690940}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 40.65, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!4 &4451408362371108
 Transform:
   m_ObjectHideFlags: 1
@@ -1877,12 +1877,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_drunkPostProcessingProfile: {fileID: 11400000, guid: 62efa5cb6e4fcfb46860684301fc3286,
     type: 2}
-  m_minVignetteIntensity: 0.5
-  m_maxVignetteIntensity: 1
-  m_vignettePacing: 0.5
-  m_minDOFDistance: 2
-  m_maxDOFDistance: 12
-  m_DOFPacing: 1
+  m_minVignetteIntensity: 0.78
+  m_maxVignetteIntensity: 0.8
+  m_vignettePacing: 5
+  m_minDOFDistance: 8
+  m_maxDOFDistance: 9
+  m_DOFPacing: 0.3
 --- !u!114 &114964727884601642
 MonoBehaviour:
   m_ObjectHideFlags: 1
