@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour {
         nAlcoholBottles = 0;
         if (testingMode == true)
             nAlcoholBottles = 7;
+
+        tPlayerPosition = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()

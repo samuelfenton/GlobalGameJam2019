@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4014089532288924}
   - component: {fileID: 114023011871403038}
   - component: {fileID: 114649927261454424}
-  - component: {fileID: 114390781858293780}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -122,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nAlcoholBottles: 5
+  AlcoholStrength: 0
   effectPercentages:
   - 6
   - 12
@@ -132,22 +132,6 @@ MonoBehaviour:
   AmountOFEffects: 2
   testingMode: 0
   tPlayerPosition: {fileID: 0}
---- !u!114 &114390781858293780
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838708188009828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1d6b0863c6c64478a6bb631227fc36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fCurrentScore: 0
-  szPlayerName: tst
-  szScoreTextFile: Assets/Scripts/Gameplay/scores.txt
-  input: {fileID: 0}
-  g: {fileID: 0}
 --- !u!114 &114649927261454424
 MonoBehaviour:
   m_ObjectHideFlags: 1
