@@ -8,24 +8,26 @@ public class Gameover : MonoBehaviour {
 
     public GameObject m_gameoverUI;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
 
-        Time.timeScale = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
 
     }
 
 
     public void gameover()
     {
-        
         m_gameoverUI.SetActive(true);
 
+        Time.timeScale = 0;
     }
 
 
