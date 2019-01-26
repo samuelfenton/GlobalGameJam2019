@@ -17,7 +17,8 @@ public class Character : MonoBehaviour
     protected Rigidbody m_rigidbody = null;
     protected GameManager m_gameManager = null;
 
-    protected Animator m_animator = null;
+    public Animator m_animator = null;
+
     protected virtual void Start ()
     {
         m_rigidbody = GetComponent<Rigidbody>();

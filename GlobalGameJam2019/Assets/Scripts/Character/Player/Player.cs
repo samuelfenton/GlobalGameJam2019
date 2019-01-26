@@ -49,6 +49,9 @@ public class Player : Character
             }
         }
 
+        //Animations
+        m_animator.SetFloat("Speed", m_rigidbody.velocity.magnitude / m_maxSpeed);
+        
         //Apply model rotation, mouse dir 
         Ray ray = m_mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -65,6 +68,7 @@ public class Player : Character
             if(mouseToPlayer.magnitude > float.Epsilon)
                 m_model.transform.LookAt(m_model.transform.position + mouseToPlayer, Vector3.up);
         }
+
 
         //Post effects
         m_drunkCompanion.UpdatePostProcesing(m_currentDrunkEffects);

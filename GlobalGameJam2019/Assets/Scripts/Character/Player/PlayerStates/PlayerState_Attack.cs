@@ -8,8 +8,9 @@ public class PlayerState_Attack : PlayerState
 
     public GameObject m_thrownBottle = null;
 
-    [Tooltip("Time of total throwing animation")]
-    public float m_totalAttackTime = 1.0f;
+    public AnimationClip m_attackingAnimation = null;
+
+    private float m_totalAttackTime = 1.0f;
 
     [Tooltip("Time of from starting anaimtion throw, to actual throw")]
     public float m_throwAttackTime = 0.2f;
@@ -26,13 +27,14 @@ public class PlayerState_Attack : PlayerState
     {
         base.Start();
         m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        m_totalAttackTime = m_attackingAnimation.length *0.95f;
     }
     //run at swap to this state
     public override void StartState()
     {
         m_attacking = true;
         m_gameManager.nAlcoholBottles -= 1;
-
+        m_parentPlayer.m_animator.SetBool("Attack", true);
         StartCoroutine(ThrowBottle());
         StartCoroutine(AnimationEnded());
     }
@@ -47,7 +49,7 @@ public class PlayerState_Attack : PlayerState
     //run at end of state
     public override void EndState()
     {
-
+        m_parentPlayer.m_animator.SetBool("Attack", false);
     }
 
     //Is this state valid, e.g. mouse down
