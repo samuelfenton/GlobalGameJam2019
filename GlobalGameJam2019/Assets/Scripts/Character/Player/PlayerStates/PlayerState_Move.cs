@@ -15,7 +15,6 @@ public class PlayerState_Move : PlayerState
     //run at swap to this state
     public override void StartState()
     {
-
     }
 
     //run each frame, perfom actions
@@ -66,7 +65,6 @@ public class PlayerState_Move : PlayerState
     //run at end of state
     public override void EndState()
     {
-
     }
 
     //Is this state valid, e.g. mouse down

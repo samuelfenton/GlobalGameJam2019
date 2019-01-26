@@ -25,8 +25,9 @@ public class Enemy : Character
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         //State Machine!
         if (m_currentState.UpdateState())//State done
         {

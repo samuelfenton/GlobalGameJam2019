@@ -33,10 +33,14 @@ public class Player : Character
         m_mainCamera = Camera.main;
 
         StartCoroutine(GetRandomEffects());
+
+        m_currentState.StartState();
     }
 
-    private void Update ()
+    protected override void Update ()
     {
+        base.Update();
+
         if (m_gameManager.nAlcoholBottles == 10)
             m_miniMe.SetActive(true);
 
