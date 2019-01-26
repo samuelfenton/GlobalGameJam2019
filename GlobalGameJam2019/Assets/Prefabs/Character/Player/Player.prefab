@@ -3971,6 +3971,7 @@ MonoBehaviour:
   m_model: {fileID: 1323826988507698}
   m_animator: {fileID: 0}
   m_currentState: {fileID: 114964727884601642}
+  m_conscious: 1
   m_miniMe: {fileID: 1318221215721860}
   m_minDrunkEffectTimer: 5
   m_maxDrunkEffectTimer: 10

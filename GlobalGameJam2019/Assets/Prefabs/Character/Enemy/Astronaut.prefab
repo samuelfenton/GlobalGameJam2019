@@ -2203,7 +2203,6 @@ MonoBehaviour:
   m_currentState: {fileID: 114566241485905518}
   m_conscious: 1
   m_atackPlayerDistance: 1.2
-  m_Player: {fileID: 0}
   m_navigationAgent: {fileID: 0}
   m_viewDistance: 10
   Rotspeed: 1000
