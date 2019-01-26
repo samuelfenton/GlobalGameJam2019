@@ -14,7 +14,6 @@ public class EnemyState_Patrolling : EnemyState
     protected override void Start()
     {
         base.Start();
-
         m_navigationAgent.destination = m_parentEnemy.m_patrolNodes[m_currentIndex].transform.position;
     }
 
@@ -28,20 +27,22 @@ public class EnemyState_Patrolling : EnemyState
         m_navigationAgent.acceleration = 20;
 
         m_parentEnemy.m_animator.SetFloat("Speed", 0.0f); 
+
     }
 
     //run each frame, perfom actions
     //Return true when completed
     public override bool UpdateState()
     {
-        if(Vector3.Distance(transform.position, m_parentEnemy.m_patrolNodes[m_currentIndex].transform.position) < m_arrivalDistance) //At next point
+        if (Vector3.Distance(transform.position, m_parentEnemy.m_patrolNodes[m_currentIndex].transform.position) < m_arrivalDistance) //At next point
         {
             m_currentIndex++;
             if (m_currentIndex >= m_parentEnemy.m_patrolNodes.Count)
                 m_currentIndex = 0;
             m_navigationAgent.destination = m_parentEnemy.m_patrolNodes[m_currentIndex].transform.position;
+           
         }
-
+        
         return true;
     }
 
