@@ -27,7 +27,7 @@ public class Gameover : MonoBehaviour {
     }
 
 
-    public void quite()
+    public void quit()
     {
         Application.Quit();
     }
