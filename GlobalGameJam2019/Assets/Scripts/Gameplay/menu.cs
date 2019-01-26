@@ -4,33 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class menu : MonoBehaviour {
-
-    [SerializeField]
-    private int scenestart;
-
-    [SerializeField]
-    private int scenecredits;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
+public class menu : MonoBehaviour
+{
     public void StartOnClick()
     {
-        SceneManager.LoadScene(scenestart);
+        SceneManager.LoadScene(1);
     }
 
     public void CreditsOnClick()
     {
-        SceneManager.LoadScene(scenecredits);
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
 
     public void quitOnClick()

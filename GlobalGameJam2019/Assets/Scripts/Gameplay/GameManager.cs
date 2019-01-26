@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -31,8 +32,8 @@ public class GameManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetAxisRaw("Cancel") != 0.0f)
-            Application.Quit();
+        if (Input.GetAxisRaw("Cancel") != 0.0f) //Load main menu
+            SceneManager.LoadScene(0);
     }
 
     //counting
