@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
-
+using TMPro;
 public class ScoreManager : MonoBehaviour {
 
     //current highscore
@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour {
     private string szTemp;
 
     //event listener
-    public InputField input;
+    public TMP_InputField input;
 
     //Game Manager reference
     public GameManager g;
@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour {
     {
         //saveScore();
         //add listener
-        var subEvent = new InputField.SubmitEvent();
+        var subEvent = new TMP_InputField.SubmitEvent();
         subEvent.AddListener(storeName);
 
         if(input!=null)
