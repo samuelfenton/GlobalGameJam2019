@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour {
             nAlcoholBottles = 7;
     }
 
+    private void Update()
+    {
+        if (Input.GetAxisRaw("Cancel") != 0.0f)
+            Application.Quit();
+    }
+
     //counting
     public void AddCount()
     {
