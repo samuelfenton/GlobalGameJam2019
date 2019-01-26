@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4783018677724126}
-  - component: {fileID: 208468022028326464}
   - component: {fileID: 65905697013738552}
   - component: {fileID: 114876246246534124}
+  - component: {fileID: 208468022028326464}
   m_Layer: 0
   m_Name: EndLevel_Trigger
   m_TagString: Untagged
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465357798724140}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.55, y: 5.453849, z: 38.17}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4415368083066844}
