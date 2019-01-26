@@ -21,6 +21,9 @@ public class ScoreManager : MonoBehaviour {
     //event listener
     public TMP_InputField input;
 
+    //display score
+    public TextMeshProUGUI scoreCount;
+
     //Game Manager reference
     public GameManager g;
 
@@ -34,12 +37,15 @@ public class ScoreManager : MonoBehaviour {
         if(input!=null)
             input.onEndEdit = subEvent;
 
+        scoreCount.text = fCurrentScore.ToString();
+
         g = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     void Update ()
     {
         fCurrentScore = g.nAlcoholBottles;
+        scoreCount.text = fCurrentScore.ToString();
     }
 
     //saves the score into a notepad fle
