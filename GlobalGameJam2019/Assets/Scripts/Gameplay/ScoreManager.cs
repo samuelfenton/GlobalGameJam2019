@@ -30,12 +30,16 @@ public class ScoreManager : MonoBehaviour {
         //add listener
         var subEvent = new InputField.SubmitEvent();
         subEvent.AddListener(storeName);
-        input.onEndEdit = subEvent;
+
+        if(input!=null)
+            input.onEndEdit = subEvent;
+
+        g = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     void Update ()
     {
-
+        fCurrentScore = g.nAlcoholBottles;
     }
 
     //saves the score into a notepad fle

@@ -866,7 +866,7 @@ Prefab:
     - target: {fileID: 114368802896653260, guid: 8ac7a2de75ea76848a6d52772cf2efed,
         type: 2}
       propertyPath: m_movementAcceleration
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1224913286654672, guid: 8ac7a2de75ea76848a6d52772cf2efed, type: 2}
       propertyPath: m_Layer
@@ -886,6 +886,11 @@ Prefab:
         type: 2}
       propertyPath: Rotspeed
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114368802896653260, guid: 8ac7a2de75ea76848a6d52772cf2efed,
+        type: 2}
+      propertyPath: m_maxSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ac7a2de75ea76848a6d52772cf2efed, type: 2}
