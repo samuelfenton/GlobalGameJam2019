@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
             currentDrunkenness[i] = false;
         }
 
-        AlcoholStrength = (Mathf.Pow((nAlcoholBottles - 1), 2)) - 5;
+        AlcoholStrength = (Mathf.Pow((nAlcoholBottles), 2)) - 1;
 
         float percentage = AlcoholStrength;
         if (percentage > 100)
