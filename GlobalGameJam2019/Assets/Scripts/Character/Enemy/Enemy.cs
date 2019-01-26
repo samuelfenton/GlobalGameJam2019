@@ -61,16 +61,15 @@ public class Enemy : Character
             case 0:
 
                 Agent.destination = m_Control[i].transform.position;
+                m_animator.SetBool("run", true);
+                m_animator.SetBool("walk", false);
+                m_animator.SetBool("down", false);
 
                 if ((transform.position.x == m_Control[i].transform.position.x) & (transform.position.z == m_Control[i].transform.position.z))
                     ++i;
 
                 if (i >= (m_Control.Count))
                     i = 0;
-
-                Debug.Log(i);
-
-
                 break;
             case 1:
                 Agent.destination = m_Player.transform.position;
@@ -81,6 +80,9 @@ public class Enemy : Character
                 if (m_Time <= 3.5)
                 {
                     Agent.destination = transform.position;
+                    m_animator.SetBool("down", true);
+                    m_animator.SetBool("run", false);
+                    m_animator.SetBool("walk", false);
                 }
                 else
                 {
