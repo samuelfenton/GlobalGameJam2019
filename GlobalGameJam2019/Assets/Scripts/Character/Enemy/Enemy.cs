@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : Character
 {
-    public float m_atackPlayerDistance = 1.5f;
+    public float m_atackPlayerDistance = 3.0f;
 
     [SerializeField]
     private Transform m_Player;
@@ -31,10 +31,12 @@ public class Enemy : Character
     private int i;
 
     private float m_Time = 0;
-
+    private Gameover m_gameover = null;
     // Use this for initialization
     void Awake()
     {
+
+        m_gameover = GameObject.FindGameObjectWithTag("UI").GetComponent<Gameover>();
         Agent = GetComponent<NavMeshAgent>();
         Sight();
 
@@ -59,11 +61,6 @@ public class Enemy : Character
         switch (Value)
         {
             case 0:
-                if(Vector3.Distance(transform.position, m_Player.transform.position) <= m_atackPlayerDistance)
-                {
-
-                }
-
                 Agent.destination = m_Control[i].transform.position;
                 m_animator.SetBool("run", true);
                 m_animator.SetBool("walk", false);
@@ -77,6 +74,10 @@ public class Enemy : Character
                 break;
             case 1:
                 Agent.destination = m_Player.transform.position;
+                if (Vector3.Distance(transform.position, m_Player.transform.position) <= m_atackPlayerDistance)
+                {
+                    m_gameover.gameover();
+                }
                 break;
             case 2:
                 m_Time += Time.deltaTime;
