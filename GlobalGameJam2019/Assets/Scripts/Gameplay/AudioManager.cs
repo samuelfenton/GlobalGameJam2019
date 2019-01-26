@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
             newAudioSource.clip = audioClip;
             newAudioSource.loop = false;
             newAudioSource.playOnAwake = false;
-
+            newAudioSource.maxDistance = 5.0f;
             p_destinationList.Add(newAudioSource);
         }
     }
