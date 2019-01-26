@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4014089532288924}
   - component: {fileID: 114023011871403038}
+  - component: {fileID: 114649927261454424}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -51,8 +52,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8685e12a0e4154b8ac6564e0621139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nAlcoholBottles: 0
+  nAlcoholBottles: 5
   effectPercentages:
+  - 6
+  - 12
+  - 24
   - 50
-  - 100
+  - 70
+  - 90
+  AmountOFEffects: 2
   tPlayerPosition: {fileID: 0}
+--- !u!114 &114649927261454424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838708188009828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a44213b49df9d4390d19749b59be28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_planeMask: 0
+  m_playerMask: 0
+  m_enemyMask: 0
+  m_enviromentMask: 0
+  m_kevinMask: 0

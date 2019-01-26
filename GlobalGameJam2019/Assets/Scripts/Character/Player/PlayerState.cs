@@ -7,11 +7,12 @@ public class PlayerState : MonoBehaviour
     [HideInInspector]
     public Player m_parentPlayer = null;
     public List<PlayerState> m_nextStates = new List<PlayerState>();
-
+    protected LayerController m_layerController = null;
 
     protected virtual void Start()
     {
         m_parentPlayer = GetComponent<Player>();
+        m_layerController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LayerController>();
     }
 
     //run at swap to this state

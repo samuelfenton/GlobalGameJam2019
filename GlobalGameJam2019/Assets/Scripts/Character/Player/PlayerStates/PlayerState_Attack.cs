@@ -63,14 +63,43 @@ public class PlayerState_Attack : PlayerState
     {
         yield return new WaitForSeconds(m_throwAttackTime);
 
-        GameObject thrownBottle = Instantiate(m_thrownBottle);
+        //Apply model rotation, mouse dir 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-        thrownBottle.transform.position = m_parentPlayer.m_model.transform.localToWorldMatrix * m_thrownOffset;//Add offset
-        thrownBottle.transform.position += transform.position; //add parent position
+        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, m_layerController.m_planeMask))
+        {
+            //one of coordiantes being always zero for aligned plane
+            Vector3 mousePos = hit.point;//this is relative to 0,0,0
 
-        thrownBottle.transform.LookAt(thrownBottle.transform.position + m_parentPlayer.m_model.transform.forward, Vector3.up);
+            Vector3 mouseToPlayer = mousePos - transform.position;
+            mouseToPlayer.y = 0;
 
-        thrownBottle.GetComponent<Rigidbody>().velocity = m_parentPlayer.m_model.transform.forward * m_throwSpeed; //THROW!
+            //Make bottle
+            GameObject thrownBottle = Instantiate(m_thrownBottle);
+
+            thrownBottle.transform.position = mouseToPlayer.normalized * m_thrownOffset.z + Vector3.up * m_thrownOffset.y;//Add offset
+            thrownBottle.transform.position += transform.position; //add parent position
+
+            thrownBottle.transform.LookAt(thrownBottle.transform.position + mouseToPlayer, Vector3.up);
+
+            thrownBottle.GetComponent<Rigidbody>().velocity = mouseToPlayer * m_throwSpeed; //THROW!
+        }
+
+
+
+
+
+
+
+        //GameObject thrownBottle = Instantiate(m_thrownBottle);
+
+        //thrownBottle.transform.position = m_parentPlayer.m_model.transform.localToWorldMatrix * m_thrownOffset;//Add offset
+        //thrownBottle.transform.position += transform.position; //add parent position
+
+        //thrownBottle.transform.LookAt(thrownBottle.transform.position + m_parentPlayer.m_model.transform.forward, Vector3.up);
+
+        //thrownBottle.GetComponent<Rigidbody>().velocity = m_parentPlayer.m_model.transform.forward * m_throwSpeed; //THROW!
     }
 
     private IEnumerator AnimationEnded()
