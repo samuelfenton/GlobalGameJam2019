@@ -19,6 +19,7 @@ public class EndLevelTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == m_layerController.m_playerMask) //End of level
         {
+            m_gameManager.m_endGame = true;
             m_gameWin.ShowWinScreen();
         }
     }

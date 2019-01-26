@@ -45,14 +45,14 @@ public class ScoreManager : MonoBehaviour {
     void Update ()
     {
         fCurrentScore = g.nAlcoholBottles;
-        scoreCount.text = fCurrentScore.ToString();
+        scoreCount.text = (fCurrentScore * 100).ToString();
     }
 
     //saves the score into a notepad fle
     void saveScore()
     {
         StreamWriter write = new StreamWriter(szScoreTextFile, true);
-        write.WriteLine(szPlayerName + ": " + fCurrentScore.ToString());
+        write.WriteLine(szPlayerName + ": " + (fCurrentScore * 100).ToString());
         write.Close();
     }
 
