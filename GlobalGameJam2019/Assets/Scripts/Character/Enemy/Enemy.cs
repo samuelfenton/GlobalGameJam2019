@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : Character
 {
+    public float m_atackPlayerDistance = 1.5f;
 
     [SerializeField]
     private Transform m_Player;
@@ -57,8 +58,11 @@ public class Enemy : Character
 
         switch (Value)
         {
-
             case 0:
+                if(Vector3.Distance(transform.position, m_Player.transform.position) <= m_atackPlayerDistance)
+                {
+
+                }
 
                 Agent.destination = m_Control[i].transform.position;
                 m_animator.SetBool("run", true);
