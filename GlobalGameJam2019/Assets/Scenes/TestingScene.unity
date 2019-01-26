@@ -214,26 +214,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &67232402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1838708188009828, guid: 2cc1c036472b0414b95940b9199ac5eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1894748131}
---- !u!114 &67232405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 67232402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a44213b49df9d4390d19749b59be28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_planeMask: 0
-  m_playerMask: 0
-  m_enemyMask: 0
-  m_enviromentMask: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,8 +1265,9 @@ MonoBehaviour:
   m_movementDecelerationPercent: 0.99
   m_maxSpeed: 10
   m_model: {fileID: 1651914520}
-  m_minDrunkEffectTimer: 5
-  m_maxDrunkEffectTimer: 10
+  m_animator: {fileID: 0}
+  m_minDrunkEffectTimer: 1
+  m_maxDrunkEffectTimer: 1
   m_additionalInputMultiplier: 1
   m_currentDrunkEffects: 
   m_currentState: {fileID: 1381011937}
@@ -1322,7 +1303,8 @@ MonoBehaviour:
   - {fileID: 1381011937}
   m_thrownBottle: {fileID: 1620602274635144, guid: 9bf5af816e705be4bae925673c70e72f,
     type: 2}
-  m_totalAttackTime: 1
+  m_attackingAnimation: {fileID: 7400000, guid: ce1fb6842f2b961408a59f965e962b91,
+    type: 3}
   m_throwAttackTime: 0.2
   m_thrownOffset: {x: 0, y: 1.5, z: 0.5}
   m_throwSpeed: 10
@@ -1801,11 +1783,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.size
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4014089532288924, guid: 2cc1c036472b0414b95940b9199ac5eb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1843,41 +1820,6 @@ Prefab:
       propertyPath: tPlayerPosition
       value: 
       objectReference: {fileID: 1381011939}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: nAlcoholBottles
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.data[2]
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.data[3]
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.data[4]
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.data[5]
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.data[0]
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023011871403038, guid: 2cc1c036472b0414b95940b9199ac5eb,
-        type: 2}
-      propertyPath: effectPercentages.Array.data[1]
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cc1c036472b0414b95940b9199ac5eb, type: 2}
   m_IsPrefabAsset: 0

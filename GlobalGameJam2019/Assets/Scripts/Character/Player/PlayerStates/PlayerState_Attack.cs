@@ -85,21 +85,6 @@ public class PlayerState_Attack : PlayerState
 
             thrownBottle.GetComponent<Rigidbody>().velocity = mouseToPlayer * m_throwSpeed; //THROW!
         }
-
-
-
-
-
-
-
-        //GameObject thrownBottle = Instantiate(m_thrownBottle);
-
-        //thrownBottle.transform.position = m_parentPlayer.m_model.transform.localToWorldMatrix * m_thrownOffset;//Add offset
-        //thrownBottle.transform.position += transform.position; //add parent position
-
-        //thrownBottle.transform.LookAt(thrownBottle.transform.position + m_parentPlayer.m_model.transform.forward, Vector3.up);
-
-        //thrownBottle.GetComponent<Rigidbody>().velocity = m_parentPlayer.m_model.transform.forward * m_throwSpeed; //THROW!
     }
 
     private IEnumerator AnimationEnded()
