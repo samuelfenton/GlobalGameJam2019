@@ -27,10 +27,10 @@ public class PlayerState_Move : PlayerState
         if (Input.GetAxisRaw("Horizontal") != 0.0f)
         {
             frameVelocity.x += Input.GetAxisRaw("Horizontal") * m_parentPlayer.m_movementAcceleration * Time.deltaTime; //speed up
-            if (m_parentPlayer.m_currentDrunkEffects.m_flipHorizontalInput)
+            if (m_parentPlayer.m_currentDrunkEffects[(int)Player.DRUNK_EFFECTS.FLIP_HORI_INPUT])
                 frameVelocity.x *= -1;
 
-            if (m_parentPlayer.m_currentDrunkEffects.m_additionalHorizontalInput)
+            if (m_parentPlayer.m_currentDrunkEffects[(int)Player.DRUNK_EFFECTS.ADD_HORI_INPUT])
                 frameVelocity.x *= m_parentPlayer.m_additionalInputMultiplier; 
         }
         else
@@ -41,10 +41,10 @@ public class PlayerState_Move : PlayerState
         if (Input.GetAxisRaw("Vertical") != 0.0f)
         {
             frameVelocity.z += Input.GetAxisRaw("Vertical") * m_parentPlayer.m_movementAcceleration * Time.deltaTime;//speed up
-            if (m_parentPlayer.m_currentDrunkEffects.m_flipVerticalInput)
+            if (m_parentPlayer.m_currentDrunkEffects[(int)Player.DRUNK_EFFECTS.FLIP_VERT_INPUT])
                 frameVelocity.z *= -1;
 
-            if (m_parentPlayer.m_currentDrunkEffects.m_additionalVerticalInput)
+            if (m_parentPlayer.m_currentDrunkEffects[(int)Player.DRUNK_EFFECTS.ADD_HORI_INPUT])
                 frameVelocity.x *= m_parentPlayer.m_additionalInputMultiplier;
         }
         else

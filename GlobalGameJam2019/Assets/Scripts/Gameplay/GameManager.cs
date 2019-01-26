@@ -26,84 +26,82 @@ public class GameManager : MonoBehaviour {
         nAlcoholBottles++;
     }
 
-    public Player.DrunkEffects DetermineDrunkEffects()
+    public bool[] DetermineDrunkEffects()
     {
-        Player.DrunkEffects currentDrunkenness = new Player.DrunkEffects();
+        bool[] currentDrunkenness = new bool[(int)Player.DRUNK_EFFECTS.EFFECT_COUNT];
         //Do magic here
 
         switch (nAlcoholBottles)
         {
             case 1:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(10.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 10.0f);
                 }
                 break;
             case 2:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(20.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 20.0f);
                 }
                 break;
             case 3:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(30.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 30.0f);
                 }
                 break;
             case 4:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(40.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 40.0f);
                 }
                 break;
             case 5:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(50.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 50.0f);
                 }
                 break;
             case 6:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(60.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 60.0f);
                 }
                 break;
             case 7:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(70.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 70.0f);
                 }
                 break;
             case 8:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(80.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 80.0f);
                 }
                 break;
             case 9:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(90.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 90.0f);
                 }
                 break;
-            case 10:
+            default:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(100.0f);
+                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 100.0f);
                 }
                 break;
         }
         return currentDrunkenness;
     }
     //the current effect
-    public Player.DrunkEffects PlayerEffectedCalc(float num)
+    public bool[] PlayerEffectedCalc(bool[] p_currentDrunkenness, float num)
     {
-        Player.DrunkEffects currentEffect = new Player.DrunkEffects();
-
         if (Random.Range(0, 100) <= num)
         {
             int randNum = Random.Range(0, 100);
             if (randNum <= effectPercentages[0])
             {
-                currentEffect.m_flipHorizontalInput = true;
+                p_currentDrunkenness[(int)Player.DRUNK_EFFECTS.FLIP_VERT_INPUT] = true;
             }
             else if(randNum <= effectPercentages[1] && randNum > effectPercentages[0])
             {
-                currentEffect.m_flipVerticalInput = true;
+                p_currentDrunkenness[(int)Player.DRUNK_EFFECTS.FLIP_HORI_INPUT] = true;
             }
         }
 
-        return currentEffect;
+        return p_currentDrunkenness;
     }
 }

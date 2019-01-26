@@ -25,9 +25,9 @@ public class DrunkCompanion : MonoBehaviour
         m_DOFDistanceDiff = m_maxDOFDistance - m_minDOFDistance;
     }
 
-    public void UpdatePostProcesing(Player.DrunkEffects p_drunkEffects)
+    public void UpdatePostProcesing(bool[] p_drunkEffects)
     {
-        if (p_drunkEffects.m_vignette)
+        if (p_drunkEffects[(int)Player.DRUNK_EFFECTS.VIGNETTE])
         {
             m_drunkPostProcessingProfile.vignette.enabled = true;
             VignetteModel.Settings vignetteSettings = m_drunkPostProcessingProfile.vignette.settings;
@@ -38,7 +38,7 @@ public class DrunkCompanion : MonoBehaviour
         else
             m_drunkPostProcessingProfile.vignette.enabled = false;
 
-        if (p_drunkEffects.m_DOF)
+        if (p_drunkEffects[(int)Player.DRUNK_EFFECTS.DOF])
         {
             m_drunkPostProcessingProfile.depthOfField.enabled = true;
             DepthOfFieldModel.Settings DOFSettings = m_drunkPostProcessingProfile.depthOfField.settings;
