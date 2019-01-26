@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-
+public class GameManager : MonoBehaviour
+{
     //alcohol bottle counter
     public int nAlcoholBottles = 0;
-
 
     public float[] effectPercentages = new float[(int)Player.DRUNK_EFFECTS.EFFECT_COUNT];
 
