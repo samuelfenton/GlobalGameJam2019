@@ -7,19 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameWin : MonoBehaviour
 {
     public GameObject gWinScreenObject;
-    public GameObject bButton;
+    public Button bButton;
     public ScoreManager sMan;
     public Button bSubmitDisable;
 
     public bool lastLevel = false;
 
-    public void Win()
+    public void Start()
     {
         gWinScreenObject.SetActive(true);
-        if(lastLevel == false)
+        if(lastLevel == true)
         {
             //hide button
-            bButton.SetActive(false);
+            bButton.interactable = false;
         }
     }
 
@@ -42,6 +42,6 @@ public class GameWin : MonoBehaviour
     {
         sMan.storeName(sMan.input.text);
         sMan.setName();
-        bSubmitDisable.gameObject.SetActive(false);
+        bSubmitDisable.interactable = false;//.SetActive(false);
     }
 }
