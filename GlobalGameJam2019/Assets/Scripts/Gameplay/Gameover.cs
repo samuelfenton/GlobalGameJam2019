@@ -16,14 +16,16 @@ public class Gameover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        Time.timeScale = 0;
 
-		
-	}
+    }
 
 
     public void gameover()
     {
+        
         m_gameoverUI.SetActive(true);
+
     }
 
 
