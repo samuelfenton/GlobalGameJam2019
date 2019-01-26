@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class Gameover : MonoBehaviour {
 
     public GameObject m_gameoverUI;
-
+    public GameManager m_gameManager = null;
     // Use this for initialization
     void Start()
     {
-
+        m_gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -25,9 +25,8 @@ public class Gameover : MonoBehaviour {
 
     public void gameover()
     {
+        m_gameManager.m_endGame = true;
         m_gameoverUI.SetActive(true);
-
-        Time.timeScale = 0;
     }
 
 

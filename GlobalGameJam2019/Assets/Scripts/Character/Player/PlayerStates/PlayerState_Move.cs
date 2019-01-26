@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerState_Move : PlayerState
 {
-    protected Rigidbody m_rigidbody = null;
+    private Rigidbody m_rigidbody = null;
 
     protected override void Start()
     {

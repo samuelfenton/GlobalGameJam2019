@@ -18,6 +18,9 @@ public class Character : MonoBehaviour
     protected GameManager m_gameManager = null;
 
     public Animator m_animator = null;
+    public CharacterState m_currentState = null;
+
+    public bool m_conscious = true;
 
     protected virtual void Start ()
     {
@@ -27,10 +30,11 @@ public class Character : MonoBehaviour
 
         m_animator = GetComponentInChildren<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    protected void SwapStates(CharacterState p_nextState)
     {
-		
-	}
+        m_currentState.EndState();
+        m_currentState = p_nextState;
+        m_currentState.StartState();
+    }
 }

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour {
     //player reference
     public Transform tPlayerPosition;
 
+    public bool m_endGame = false;
+
     //awake
     void Awake()
     {

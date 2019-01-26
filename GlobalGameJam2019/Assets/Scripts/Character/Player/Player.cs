@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(DrunkCompanion))]
 public class Player : Character
 {
+    public GameObject m_miniMe = null;
 
     [Header("Drunk stuff")]
     [Tooltip("Minimum time between change in drunk effects")]
@@ -17,10 +18,10 @@ public class Player : Character
     public enum DRUNK_EFFECTS {FLIP_VERT_INPUT, FLIP_HORI_INPUT, ADD_VERT_INPUT, ADD_HORI_INPUT, VIGNETTE, DOF, EFFECT_COUNT }
 
     public bool[] m_currentDrunkEffects = null;
-    public PlayerState m_currentState = null;
 
     private DrunkCompanion m_drunkCompanion = null;
     private Camera m_mainCamera = null;
+
 
     protected override void Start()
     {
@@ -36,10 +37,13 @@ public class Player : Character
 
     private void Update ()
     {
+        if (m_gameManager.nAlcoholBottles == 10)
+            m_miniMe.SetActive(true);
+
         //State Machine!
-        if(m_currentState.UpdateState())//State done
+        if (m_currentState.UpdateState())//State done
         {
-            foreach (PlayerState playerState in m_currentState.m_nextStates)
+            foreach (CharacterState playerState in m_currentState.m_nextStates)
             {
                 if(playerState.IsValid())
                 {
@@ -65,12 +69,5 @@ public class Player : Character
         m_currentDrunkEffects = m_gameManager.DetermineDrunkEffects(); // New effects!
 
         StartCoroutine(GetRandomEffects());
-    }
-
-    private void SwapStates(PlayerState p_nextState)
-    {
-        m_currentState.EndState();
-        m_currentState = p_nextState;
-        m_currentState.StartState();
     }
 }
