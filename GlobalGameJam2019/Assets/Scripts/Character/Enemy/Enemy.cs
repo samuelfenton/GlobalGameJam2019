@@ -35,10 +35,12 @@ public class Enemy : Character
     // Use this for initialization
     void Awake()
     {
+        m_Player = GameObject.FindGameObjectWithTag("Player").transform;
 
         m_gameover = GameObject.FindGameObjectWithTag("UI").GetComponent<Gameover>();
         Agent = GetComponent<NavMeshAgent>();
         Sight();
+
 
         i = 0;
     }
