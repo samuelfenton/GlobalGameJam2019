@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
                 break;
             default:
                 {
-                    currentDrunkenness = PlayerEffectedCalc(currentDrunkenness, 100.0f);
+                    currentDrunkenness = temp(currentDrunkenness, 100.0f);
                 }
                 break;
         }
@@ -134,14 +134,6 @@ public class GameManager : MonoBehaviour {
                 }
             }
 
-            //if (randNum <= effectPercentages[0])
-            //{
-            //    p_currentDrunkenness[(int)Player.DRUNK_EFFECTS.FLIP_VERT_INPUT] = true;
-            //}
-            //else if (randNum <= effectPercentages[1] && randNum > effectPercentages[0])
-            //{
-            //    p_currentDrunkenness[(int)Player.DRUNK_EFFECTS.FLIP_HORI_INPUT] = true;
-            //}
         }
 
         return p_currentDrunkenness;
