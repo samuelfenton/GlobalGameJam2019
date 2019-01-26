@@ -51,7 +51,7 @@ public class Player : Character
 
         //Animations
         m_animator.SetFloat("Speed", m_rigidbody.velocity.magnitude / m_maxSpeed);
-
+        m_animator.SetFloat("Drunkenness", Mathf.Clamp(m_gameManager.nAlcoholBottles / 10.0f,0, 1));
         m_model.transform.LookAt(m_model.transform.position + m_rigidbody.velocity, Vector3.up);
 
         //Post effects

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65905697013738552}
   - component: {fileID: 114876246246534124}
   m_Layer: 0
-  m_Name: EscapePodOpen_01
+  m_Name: EndLevel_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
