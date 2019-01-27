@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 53966067b67dd7a4685dd5cc1df54ac4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mesh_Kevin:JNT_Back_Ankle_L
+    100004: Mesh_Kevin:JNT_Back_Ankle_R
+    100006: Mesh_Kevin:JNT_Back_Foot_L
+    100008: Mesh_Kevin:JNT_Back_Foot_R
+    100010: Mesh_Kevin:JNT_Back_Hip_L
+    100012: Mesh_Kevin:JNT_Back_Hip_R
+    100014: Mesh_Kevin:JNT_Back_Knee_L
+    100016: Mesh_Kevin:JNT_Back_Knee_R
+    100018: Mesh_Kevin:JNT_BigClaw_L
+    100020: Mesh_Kevin:JNT_BigClaw_R
+    100022: Mesh_Kevin:JNT_Elbow_L
+    100024: Mesh_Kevin:JNT_Elbow_R
+    100026: Mesh_Kevin:JNT_Eye_01_L
+    100028: Mesh_Kevin:JNT_Eye_01_R
+    100030: Mesh_Kevin:JNT_Eye_02_L
+    100032: Mesh_Kevin:JNT_Eye_02_R
+    100034: Mesh_Kevin:JNT_Eye_03_L
+    100036: Mesh_Kevin:JNT_Eye_03_R
+    100038: Mesh_Kevin:JNT_Eye_04_L
+    100040: Mesh_Kevin:JNT_Eye_04_R
+    100042: Mesh_Kevin:JNT_Eye_05_L
+    100044: Mesh_Kevin:JNT_Eye_05_R
+    100046: Mesh_Kevin:JNT_EyeBrow_01_L
+    100048: Mesh_Kevin:JNT_EyeBrow_01_R
+    100050: Mesh_Kevin:JNT_EyeBrow_02_L
+    100052: Mesh_Kevin:JNT_EyeBrow_02_R
+    100054: Mesh_Kevin:JNT_EyeBrow_03_L
+    100056: Mesh_Kevin:JNT_EyeBrow_03_R
+    100058: Mesh_Kevin:JNT_Front_Ankle_L
+    100060: Mesh_Kevin:JNT_Front_Ankle_R
+    100062: Mesh_Kevin:JNT_Front_Foot_L
+    100064: Mesh_Kevin:JNT_Front_Foot_R
+    100066: Mesh_Kevin:JNT_Front_Hip_L
+    100068: Mesh_Kevin:JNT_Front_Hip_R
+    100070: Mesh_Kevin:JNT_Front_Knee_L
+    100072: Mesh_Kevin:JNT_Front_Knee_R
+    100074: Mesh_Kevin:JNT_LittleClaw_L
+    100076: Mesh_Kevin:JNT_Middle_Ankle_L
+    100078: Mesh_Kevin:JNT_Middle_Ankle_R
+    100080: Mesh_Kevin:JNT_Middle_Foot_L
+    100082: Mesh_Kevin:JNT_Middle_Foot_R
+    100084: Mesh_Kevin:JNT_Middle_Hip_L
+    100086: Mesh_Kevin:JNT_Middle_Hip_R
+    100088: Mesh_Kevin:JNT_Middle_Knee_L
+    100090: Mesh_Kevin:JNT_Middle_Knee_R
+    100092: Mesh_Kevin:JNT_RittleClaw_R
+    100094: Mesh_Kevin:JNT_Shoulder_L
+    100096: Mesh_Kevin:JNT_Shoulder_R
+    100098: Mesh_Kevin:JNT_Waist
+    100100: Mesh_Kevin:JNT_Wrist_L
+    100102: Mesh_Kevin:JNT_Wrist_R
+    100104: Mesh_Kevin:locator1
+    100106: Mesh_Kevin:Mesh_Kevin
+    400000: //RootNode
+    400002: Mesh_Kevin:JNT_Back_Ankle_L
+    400004: Mesh_Kevin:JNT_Back_Ankle_R
+    400006: Mesh_Kevin:JNT_Back_Foot_L
+    400008: Mesh_Kevin:JNT_Back_Foot_R
+    400010: Mesh_Kevin:JNT_Back_Hip_L
+    400012: Mesh_Kevin:JNT_Back_Hip_R
+    400014: Mesh_Kevin:JNT_Back_Knee_L
+    400016: Mesh_Kevin:JNT_Back_Knee_R
+    400018: Mesh_Kevin:JNT_BigClaw_L
+    400020: Mesh_Kevin:JNT_BigClaw_R
+    400022: Mesh_Kevin:JNT_Elbow_L
+    400024: Mesh_Kevin:JNT_Elbow_R
+    400026: Mesh_Kevin:JNT_Eye_01_L
+    400028: Mesh_Kevin:JNT_Eye_01_R
+    400030: Mesh_Kevin:JNT_Eye_02_L
+    400032: Mesh_Kevin:JNT_Eye_02_R
+    400034: Mesh_Kevin:JNT_Eye_03_L
+    400036: Mesh_Kevin:JNT_Eye_03_R
+    400038: Mesh_Kevin:JNT_Eye_04_L
+    400040: Mesh_Kevin:JNT_Eye_04_R
+    400042: Mesh_Kevin:JNT_Eye_05_L
+    400044: Mesh_Kevin:JNT_Eye_05_R
+    400046: Mesh_Kevin:JNT_EyeBrow_01_L
+    400048: Mesh_Kevin:JNT_EyeBrow_01_R
+    400050: Mesh_Kevin:JNT_EyeBrow_02_L
+    400052: Mesh_Kevin:JNT_EyeBrow_02_R
+    400054: Mesh_Kevin:JNT_EyeBrow_03_L
+    400056: Mesh_Kevin:JNT_EyeBrow_03_R
+    400058: Mesh_Kevin:JNT_Front_Ankle_L
+    400060: Mesh_Kevin:JNT_Front_Ankle_R
+    400062: Mesh_Kevin:JNT_Front_Foot_L
+    400064: Mesh_Kevin:JNT_Front_Foot_R
+    400066: Mesh_Kevin:JNT_Front_Hip_L
+    400068: Mesh_Kevin:JNT_Front_Hip_R
+    400070: Mesh_Kevin:JNT_Front_Knee_L
+    400072: Mesh_Kevin:JNT_Front_Knee_R
+    400074: Mesh_Kevin:JNT_LittleClaw_L
+    400076: Mesh_Kevin:JNT_Middle_Ankle_L
+    400078: Mesh_Kevin:JNT_Middle_Ankle_R
+    400080: Mesh_Kevin:JNT_Middle_Foot_L
+    400082: Mesh_Kevin:JNT_Middle_Foot_R
+    400084: Mesh_Kevin:JNT_Middle_Hip_L
+    400086: Mesh_Kevin:JNT_Middle_Hip_R
+    400088: Mesh_Kevin:JNT_Middle_Knee_L
+    400090: Mesh_Kevin:JNT_Middle_Knee_R
+    400092: Mesh_Kevin:JNT_RittleClaw_R
+    400094: Mesh_Kevin:JNT_Shoulder_L
+    400096: Mesh_Kevin:JNT_Shoulder_R
+    400098: Mesh_Kevin:JNT_Waist
+    400100: Mesh_Kevin:JNT_Wrist_L
+    400102: Mesh_Kevin:JNT_Wrist_R
+    400104: Mesh_Kevin:locator1
+    400106: Mesh_Kevin:Mesh_Kevin
+    2100000: lambert1
+    4300000: Mesh_Kevin:Mesh_Kevin
+    7400000: Kevin_Run
+    7400002: Kevin_Walk
+    7400004: Kevin_Wave
+    9500000: //RootNode
+    13700000: Mesh_Kevin:Mesh_Kevin
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Kevin_Run
+      takeName: Kevin_Run
+      firstFrame: 1
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Kevin_Walk
+      takeName: Kevin_Walk
+      firstFrame: 20
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Kevin_Wave
+      takeName: Kevin_Wave
+      firstFrame: 55
+      lastFrame: 65
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
