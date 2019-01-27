@@ -47,7 +47,7 @@ public class EnemyState_Chasing : EnemyState
     //Return true when valid
     public override bool IsValid()
     {
-        return m_parentEnemy.m_viewDistance > Vector3.Distance(m_targetPlayer.transform.position, this.transform.position);
+        return CanSeePlayer() && m_parentEnemy.m_viewDistance > Vector3.Distance(m_targetPlayer.transform.position, this.transform.position);
     }
 
     private bool CanSeePlayer()
