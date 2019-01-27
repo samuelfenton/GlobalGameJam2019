@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620602274635144}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: 0}
+  m_LocalPosition: {x: -5.3124914, y: 6.8992744e-18, z: -1.5535784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4445601594488224}
@@ -88,7 +88,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6206bed166d67f443acddce027e06ae4, type: 3}
+  - {fileID: 2100000, guid: ddd1b259c53bc9d48aec01d4732beacc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbfa567fbdbc8541956aac9f8f86910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_glassShatterEffect: {fileID: 1072569178257214, guid: 901d8cdad5ff69e43bca67a1f921aa15,
+    type: 2}
 --- !u!136 &136611728977229600
 CapsuleCollider:
   m_ObjectHideFlags: 1
