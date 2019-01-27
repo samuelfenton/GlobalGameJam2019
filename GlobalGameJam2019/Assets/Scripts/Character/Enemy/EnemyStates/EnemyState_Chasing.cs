@@ -49,4 +49,17 @@ public class EnemyState_Chasing : EnemyState
     {
         return m_parentEnemy.m_viewDistance > Vector3.Distance(m_targetPlayer.transform.position, this.transform.position);
     }
+
+    private bool CanSeePlayer()
+    {
+        Vector3 distance = m_targetPlayer.transform.position - transform.position;
+
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position + Vector3.up, distance, out hit))
+        {
+            return (hit.collider.tag == "Player");
+        }
+
+        return false;
+    }
 }

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4832638070539988}
   - component: {fileID: 65179618034103312}
   - component: {fileID: 208150112583708628}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShuttleDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

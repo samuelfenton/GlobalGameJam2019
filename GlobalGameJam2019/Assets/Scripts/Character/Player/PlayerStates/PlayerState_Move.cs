@@ -34,7 +34,7 @@ public class PlayerState_Move : PlayerState
         }
         else
         {
-            frameVelocity.x *= m_parentPlayer.m_movementDecelerationPercent; //slow down
+            frameVelocity.x = -m_rigidbody.velocity.x * m_parentPlayer.m_movementDecelerationPercent * Time.deltaTime;//slow down
         }
 
         if (Input.GetAxisRaw("Vertical") != 0.0f)
@@ -48,7 +48,7 @@ public class PlayerState_Move : PlayerState
         }
         else
         {
-            frameVelocity.z *= m_parentPlayer.m_movementDecelerationPercent;//slow down
+            frameVelocity.z = -m_rigidbody.velocity.z * m_parentPlayer.m_movementDecelerationPercent * Time.deltaTime;//slow down
         }
 
         //Cap to max speed

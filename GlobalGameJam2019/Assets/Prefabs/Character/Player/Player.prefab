@@ -2754,13 +2754,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902067765113024}
-  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 10, z: -9.5}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 16, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4950581472690940}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!4 &4423024380796962
 Transform:
   m_ObjectHideFlags: 1
@@ -3717,7 +3717,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839113583825774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: 0, z: -0.22}
+  m_LocalPosition: {x: 13.576899, y: -2.9631565e-17, z: 13.34487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4421609874966890}
@@ -3965,8 +3965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f856a52c47a6e8440b07bc91f2a00524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_movementAcceleration: 10
-  m_movementDecelerationPercent: 0.99
+  m_movementAcceleration: 5
+  m_movementDecelerationPercent: 0.8
   m_maxSpeed: 10
   m_model: {fileID: 1323826988507698}
   m_animator: {fileID: 0}

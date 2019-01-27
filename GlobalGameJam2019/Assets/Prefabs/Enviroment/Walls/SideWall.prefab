@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4297330759638426}
   - component: {fileID: 65850429558402754}
   - component: {fileID: 208391559863786998}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SideWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -63,28 +63,20 @@ public class PlayerState_Attack : PlayerState
     {
         yield return new WaitForSeconds(m_throwAttackTime);
 
-        //Apply model rotation, mouse dir 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        float mouseRatioX = Input.mousePosition.x / Screen.width;
+        float mouseRatioY = Input.mousePosition.y / Screen.height;
 
-        if (Physics.Raycast(ray, out hit, float.PositiveInfinity, m_layerController.m_planeMask))
-        {
-            //one of coordiantes being always zero for aligned plane
-            Vector3 mousePos = hit.point;//this is relative to 0,0,0
+        Vector3 mouseVector = new Vector3(-0.5f + mouseRatioX, 0, -0.5f + mouseRatioY);
 
-            Vector3 mouseToPlayer = mousePos - transform.position;
-            mouseToPlayer.y = 0;
+        //Make bottle
+        GameObject thrownBottle = Instantiate(m_thrownBottle);
 
-            //Make bottle
-            GameObject thrownBottle = Instantiate(m_thrownBottle);
+        thrownBottle.transform.position = mouseVector.normalized * m_thrownOffset.z + Vector3.up * m_thrownOffset.y;//Add offset
+        thrownBottle.transform.position += transform.position; //add parent position
 
-            thrownBottle.transform.position = mouseToPlayer.normalized * m_thrownOffset.z + Vector3.up * m_thrownOffset.y;//Add offset
-            thrownBottle.transform.position += transform.position; //add parent position
+        thrownBottle.transform.LookAt(thrownBottle.transform.position + mouseVector, Vector3.up);
 
-            thrownBottle.transform.LookAt(thrownBottle.transform.position + mouseToPlayer, Vector3.up);
-
-            thrownBottle.GetComponent<Rigidbody>().velocity = mouseToPlayer.normalized * m_throwSpeed; //THROW!
-        }
+        thrownBottle.GetComponent<Rigidbody>().velocity = mouseVector.normalized * m_throwSpeed; //THROW!
     }
 
     private IEnumerator AnimationEnded()

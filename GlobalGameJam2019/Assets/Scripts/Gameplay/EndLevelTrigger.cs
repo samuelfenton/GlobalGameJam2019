@@ -8,9 +8,6 @@ public class EndLevelTrigger : MonoBehaviour
 
     private AudioSource m_launch;
 
-    [SerializeField]
-    private AudioClip m_escapePod;
-
     public GameManager m_gameManager = null;
     private GameWin m_gameWin = null;
     void Start()
@@ -28,7 +25,7 @@ public class EndLevelTrigger : MonoBehaviour
         {
             m_gameManager.m_endGame = true;
             m_gameWin.ShowWinScreen();
-            m_launch.PlayOneShot(m_escapePod);
+            m_launch.Play();
         }
     }
 }
