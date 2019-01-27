@@ -2205,7 +2205,7 @@ MonoBehaviour:
   m_conscious: 1
   m_atackPlayerDistance: 1.2
   m_navigationAgent: {fileID: 0}
-  m_viewDistance: 12
+  m_viewDistance: 8
   Rotspeed: 1000
   m_patrolNodes:
   - {fileID: 0}

@@ -13,7 +13,8 @@ public class ScoreManager : MonoBehaviour {
 
     //file location
     [Tooltip("This is the string file location for the .txt file that is being written into.")]
-    public string szScoreTextFile = "Assets/Scripts/Gameplay/scores.txt";
+
+    private string szScoreTextFile = "Assets/Scripts/Gameplay/scores.txt";
 
     //temp string
     private string szTemp;
@@ -29,6 +30,7 @@ public class ScoreManager : MonoBehaviour {
 
     void Awake()
     {
+        szScoreTextFile= Application.dataPath + "scores.txt";
         //saveScore();
         //add listener
         var subEvent = new TMP_InputField.SubmitEvent();
