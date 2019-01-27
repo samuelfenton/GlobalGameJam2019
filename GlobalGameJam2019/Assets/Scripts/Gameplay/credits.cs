@@ -25,5 +25,10 @@ public class credits : MonoBehaviour {
         {
             SceneManager.LoadScene(menuScene);
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(menuScene);
+        }
 	}
 }
